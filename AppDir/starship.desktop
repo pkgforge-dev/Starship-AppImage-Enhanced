@@ -5,5 +5,5 @@ Exec=Starship
 Terminal=false
 Icon=starship
 Type=Application
-StartupWMClass=
+StartupWMClass=Starship
 Categories=Game;Retro;
