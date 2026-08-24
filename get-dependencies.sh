@@ -10,7 +10,6 @@ pacman -Syu --noconfirm \
 	cmake         \
 	fmt           \
 	libzip        \
-	ninja         \
 	nlohmann-json \
 	sdl2          \
 	spdlog        \
@@ -20,10 +19,8 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 
-# Comment this out if you need an AUR package
 make-aur-package zenity-rs-bin
 
-# If the application needs to be manually built that has to be done down here
 echo "Making stable build of Starship..."
 echo "---------------------------------------------------------------"
 REPO=https://github.com/HarbourMasters/Starship
@@ -36,9 +33,9 @@ git clone --branch "$TAG" --single-branch --recursive --depth 1 "$REPO" ./Starsh
 	patch -Np1 -i ../patches/torch-src-dest-paths.patch
 	sed -i 's/-mfpu=neon/-mcpu=native/' CMakeLists.txt
 
-	cmake ./ -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_POSITION_INDEPENDENT_CODE=ON
-	cmake --build build --config Release
-	cmake --build build --config Release --target GeneratePortO2R
+	cmake ./ -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+	cmake --build build --config Release -j$(nproc)
+	cmake --build build --config Release --target GeneratePortO2R -j$(nproc)
 	echo "${TAG#v}" > ~/version
 )
 
@@ -47,4 +44,3 @@ for a in assets Starship config.yml starship.o2r; do
 	mv -v ./Starship/build/"$a" ./AppDir/bin
 done
 wget -O ./AppDir/bin/gamecontrollerdb.txt https://raw.githubusercontent.com/mdqinc/SDL_GameControllerDB/master/gamecontrollerdb.txt
-mv -v ./Starship/logo.png ./AppDir/starship.png
