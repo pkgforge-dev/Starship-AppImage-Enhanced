@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Starship
-Comment=An unofficial port of Star Fox 64
-Exec=Starship
-Terminal=false
-Icon=starship
-Type=Application
-StartupWMClass=
-Categories=Game;Retro;
