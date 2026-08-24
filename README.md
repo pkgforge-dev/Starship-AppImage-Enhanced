@@ -3,7 +3,7 @@
 # Starship-AppImage-Enhanced 🐧
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/Starship-AppImage-Enhanced/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/Starship-AppImage-Enhanced/releases/latest)
-[![CI Build Status](https://github.com/pkgforge-dev/Starship-AppImage/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/Starship-AppImage-Enhanced/releases/latest)
+[![CI Build Status](https://github.com/pkgforge-dev/Starship-AppImage-Enhanced/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/Starship-AppImage-Enhanced/releases/latest)
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/Starship-AppImage-Enhanced)](https://github.com/pkgforge-dev/Starship-AppImage-Enhanced/releases/latest)
 
 <p align="center">
